@@ -31,3 +31,6 @@ design.main = {
 design.zones.main.input = {2,2,17,11}
 design.zones.main.output = {19,2,34,11}
 design.zones.main.storage = {2,13,34,22}
+
+
+return design
