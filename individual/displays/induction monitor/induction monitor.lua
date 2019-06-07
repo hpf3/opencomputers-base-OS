@@ -17,6 +17,7 @@ gpu.setBackground(color1)
 gpu.setForeground(color2)
 
 gpu.setResolution(x,y)
+term.clear()
 print(x,y)
 print(string.sub(layout[y],1,1))
 print(string.sub(layout[y],1,2))
