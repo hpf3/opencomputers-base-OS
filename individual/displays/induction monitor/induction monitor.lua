@@ -28,7 +28,7 @@ os.sleep(5)
 term.clear()
 for i=1,y,1 do
 for e=1,x,1 do
-if string.sub(layout[i],e,e) == "X" then gpu.set(i,e,p) end
+if string.sub(layout[i],e,e) == "X" then gpu.set(e,i,p) end
 end
 end
 end
