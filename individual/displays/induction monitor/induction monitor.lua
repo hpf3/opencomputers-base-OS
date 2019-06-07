@@ -17,6 +17,8 @@ gpu.setBackground(color1)
 gpu.setForeground(color2)
 
 gpu.setResolution(x,y)
+print(x,y)
+os.sleep(5)
 term.clear()
 for i=1,1,y do
 for e=1,1,x do
