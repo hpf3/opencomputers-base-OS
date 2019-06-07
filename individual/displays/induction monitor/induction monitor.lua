@@ -5,16 +5,16 @@ local gpu = component.gpu
 local matrix = component.induction_matrix
 local screen = component.screen
 local p = "▀"
-gpu.
-
+local color1 = 0x0F0F0F
+local color2 = 0x5A5A5A
 
 
 local function drawDesign(layout)
 local y = #layout
 local x = string.len(layout[1])
 
-gpu.setBackground(1,true)
-gpu.setForeground(2,true)
+gpu.setBackground(color1)
+gpu.setForeground(color2)
 
 gpu.setResolution(x,y)
 term.clear()
@@ -28,3 +28,4 @@ end
 
 
 drawDesign(design.main)
+os.sleep(30)
