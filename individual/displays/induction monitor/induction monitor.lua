@@ -23,8 +23,8 @@ print(string.sub(layout[y],1,1))
 print(string.sub(layout[y],1,2))
 os.sleep(5)
 term.clear()
-for i=1,1,y do
-for e=1,1,x do
+for i=1,y do
+for e=1,x do
 if string.sub(layout[i],e,e) == "X" then gpu.set(i,e,p) end
 end
 end
