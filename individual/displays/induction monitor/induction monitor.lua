@@ -4,7 +4,7 @@ local design = require("design")
 local gpu = component.gpu
 local matrix = component.induction_matrix
 local screen = component.screen
-local p = "▀"
+local p = "█"
 local color1 = 0x0F0F0F
 local color2 = 0x5A5A5A
 
