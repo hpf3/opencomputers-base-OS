@@ -7,7 +7,14 @@ local screen = component.screen
 local p = "█"
 local color1 = 0x0F0F0F
 local color2 = 0x5A5A5A
+local red = 0xFF0000
+local green = 0x00FF00
+local orange = 0xFFA500
 
+local function color(fore = gpu.getForeground(),back = getBackground())
+gpu.setBackground(back)
+gpu.setForeground(fore)
+end
 
 local function drawDesign(layout)
 local y = #layout
@@ -21,9 +28,9 @@ term.clear()
 print(x,y)
 print(string.sub(layout[y],1,1))
 print(string.sub(layout[y],1,2))
-gpu.set(3,1,p)
-gpu.set(3,2,p)
 gpu.set(3,3,p)
+gpu.set(2,3,p)
+gpu.set(1,3,p)
 os.sleep(5)
 term.clear()
 for i=1,y,1 do
@@ -33,7 +40,26 @@ end
 end
 end
 
+function storageUpdate()
+local zone = design.zones.main
+local maximum = matrix.getMaxEnergy()
+local current = matrix.getEnergy()
+local barPercent = maximum / current
+local width = (zone.storage[3] - zone.storage[1]) * barPercent
+local height = zone.storage[4] - zone.storage[2]
+color(orange)
+gpu.fill(zone.storage[1],zone.storage[2],width / barPercent,height,p)
+gpu.fill(zone.storage[1],zone.storage[2],width,height,p)
+end
 
+local function ioUpdate()
 
+local input = matrix.getInput()
+local output = matrix.getOutput()
+end
 drawDesign(design.main)
-os.sleep(30)
+while true do
+storageUpdate()
+os.sleep(0.05)
+end
+
