@@ -45,10 +45,11 @@ local zone = design.zones.main
 local maximum = matrix.getMaxEnergy()
 local current = matrix.getEnergy()
 local barPercent = maximum / current
-local width = (zone.storage[3] - zone.storage[1]) * barPercent
-local height = zone.storage[4] - zone.storage[2]
-color(orange,color1)
+local width = ((zone.storage[3]-1) - zone.storage[1]) * barPercent
+local height = zone.storage[4] - zone.storage[2]+1
+color(color2,color1)
 gpu.fill(zone.storage[1],zone.storage[2],width / barPercent,height,p)
+color(orange,color1)
 gpu.fill(zone.storage[1],zone.storage[2],width,height,p)
 end
 
