@@ -10,7 +10,7 @@ local color2 = 0x5A5A5A
 local red = 0xFF0000
 local green = 0x00FF00
 local orange = 0xFFA500
-
+local blue = 0x0000FF
 local function color(fore,back)
 gpu.setBackground(back)
 gpu.setForeground(fore)
@@ -45,12 +45,12 @@ local zone = design.zones.main
 local maximum = matrix.getMaxEnergy()
 local current = matrix.getEnergy()
 local barPercent = current/maximum
-local width = ((zone.storage[3]-1) - zone.storage[1]) * barPercent
-local height = zone.storage[4] - zone.storage[2]+1
-color(color2,color1)
-gpu.fill(zone.storage[1],zone.storage[2],width / barPercent,height,p)
+local width = ((zone.storage[3]) - zone.storage[1]) * barPercent
+local height = zone.storage[4] - zone.storage[2]
 color(orange,color1)
 gpu.fill(zone.storage[1],zone.storage[2],width,height,p)
+color(blue,color1)
+gpu.fill(zone.storage[1]+width,zone.storage[2],((zone.storage[3]) - zone.storage[1]) - width,height,p)
 end
 
 local function ioUpdate()
