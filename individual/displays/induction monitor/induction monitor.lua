@@ -49,7 +49,7 @@ local height = zone.storage[4] - zone.storage[2]
 color(orange,color1)
 gpu.fill(zone.storage[1],zone.storage[2],width,height,p)
 color(blue,color1)
-gpu.fill(zone.storage[1]+width,zone.storage[2],((zone.storage[3]) - zone.storage[1]) - width,height,p)
+gpu.fill(zone.storage[1]+width,zone.storage[2],((zone.storage[3] - zone.storage[1]) - width),height,p)
 end
 
 local function ioUpdate()
