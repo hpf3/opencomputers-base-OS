@@ -25,13 +25,13 @@ gpu.setForeground(color2)
 
 gpu.setResolution(x,y)
 term.clear()
-print(x,y)
+print(matrix.getMaxEnergy())
 print(string.sub(layout[y],1,1))
 print(string.sub(layout[y],1,2))
 gpu.set(3,3,p)
 gpu.set(2,3,p)
 gpu.set(1,3,p)
-os.sleep(5)
+os.sleep(5)                     
 term.clear()
 for i=1,y,1 do
 for e=1,x,1 do
@@ -44,7 +44,7 @@ function storageUpdate()
 local zone = design.zones.main
 local maximum = matrix.getMaxEnergy()
 local current = matrix.getEnergy()
-local barPercent = maximum / current
+local barPercent = current/maximum
 local width = ((zone.storage[3]-1) - zone.storage[1]) * barPercent
 local height = zone.storage[4] - zone.storage[2]+1
 color(color2,color1)
