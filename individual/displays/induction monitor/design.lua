@@ -28,9 +28,9 @@ design.main = {
 "XXOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOXX",
 "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 }
-design.zones.main.input = {3,2,73,11}
-design.zones.main.output = {3,2,73,11}
-design.zones.main.storage = {3,15,73,25}
+design.zones.main.input = {3,2,74,11}
+design.zones.main.output = {3,2,74,11}
+design.zones.main.storage = {3,15,74,25}
 
 
 return design
